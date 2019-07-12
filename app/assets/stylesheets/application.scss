@@ -1,0 +1,103 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+  @import "bootstrap";
+
+/*
+ *= require_tree .
+ *= require_self
+ */
+ .article-action{
+  border-top:1px solid #eaeaea;
+  padding-top: 5px;
+}
+.description{
+  margin-top: 0;
+}
+.center{
+  text-align:center;
+}
+.navbar{
+  background-color:yellow
+}
+
+@media (min-width: 576px) {
+  .post-index {
+      width: 50%;
+     
+  }
+  .form-error {
+      width:50%;
+  }
+  .form-field {
+      width:50%
+  }
+  .card{
+    width:50%
+  }
+  .text-input{
+    width:90%
+  }
+  
+  
+}
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .post-index {
+    width: 33.33%;
+  }
+  .form-error {
+      width:60%;
+      
+  }
+  .form-field {
+      width:90%;
+     
+  }
+  .card{
+    width:30%
+  }
+
+  
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .post-index {
+      width:25%;
+  }
+  .form-error {
+      width: 55%;
+      
+  }
+  .form-field {
+      width:85%;
+      
+  }
+  .card{
+    width:25%
+  }
+  
+  
+}
+.card{
+  margin:20px
+}
+
+.card-show{
+  text-align: center;
+ 
+}
+
+.new{
+  margin:20px
+}

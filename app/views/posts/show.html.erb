@@ -1,0 +1,74 @@
+<h2 align="center">Title:<%=@post.title%></h2>
+<div class="well col-xs-8 col-xs-offset-2">
+<h4 class="center description"><strong>Body: </strong></h4>
+<hr>
+<%= simple_format(@post.body)%>
+<div class="article-action">
+  <%= link_to "edit this post",edit_post_path(@post),class:"btn btn-xs btn-primary"%>   
+  <%= link_to "delete this post", post_path(@post), method: :delete, 
+                                    data:{confirm:"are you sure want to delete the post"}, 
+                                    class:"btn btn-xs btn-danger"%>
+  <%= link_to "view all posts",posts_path,class: "btn btn-xs btn-success" %>
+</div>
+</div>
+
+  <hr />
+  <%= form_with(model: [@post, @comment], local: true) do |f| %>
+    <% if @comment.errors.any? %>
+      <ul>
+        <% @comment.errors.full_messages.each do |msg|%>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+      <% end %>
+  <p>
+  <strong>Comments:</strong>
+  <div class="form-group">
+    <%= f.text_area(
+    :description,
+    cols: 30,
+    rows: 3,
+    placeholder: "What are your comments?",
+    class: "form-control"
+    ) %>
+  </div>
+
+</p>
+<%= f.submit "Comment" %>
+</div>
+
+
+
+ 
+
+
+
+<hr />
+
+<ul class="comment-list">
+  <% @comments.each do |comment| %>
+      <p>
+
+        <%= comment.description %> <br />
+         Comment <%= time_ago_in_words(comment.created_at) %> ago
+         |
+         <small>
+           <%= link_to(
+             "Delete",
+             post_comment_path(@post, comment),
+             method: :delete,
+             data: {
+               confirm: "Are you sure?"
+             }
+           ) %>
+         </small>
+        <% end %>
+
+
+
+
+      </p>
+
+</ul>
+<% end %>
+<%# Nothing %>
